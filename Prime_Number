@@ -1,0 +1,43 @@
+using System;
+
+namespace Prime_Number
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            bool Door = false;
+            int LastCount = 0;
+
+            for (int a = 2; a < 5000; a++)
+            {
+
+                for (int i = 2; i < a; i++)
+                {
+
+                    if (a % i == 0 && Door == false)
+                    {
+                        LastCount = 0;
+                        Door = true;
+                    }
+                    else if (Door == false)
+                    {
+
+                        LastCount = a;
+                    }
+
+                }
+
+                Door = false;
+
+                if (LastCount > 0)
+                {
+                    Console.WriteLine("Prime_Number: " + LastCount);
+                }
+
+            }
+
+            Console.ReadLine();
+        }
+    }
+}
